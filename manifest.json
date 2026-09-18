@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy-preserving browser agent",
+  "version": "2.0.0",
+  "description": "Privacy-preserving browser agent with local AI",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "offscreen",
+    "storage",
+    "activeTab",
+    "sidePanel",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["dist/content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidebar.html"
+  },
+  "action": {
+    "default_title": "Open Browser Agent"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "minimum_chrome_version": "116"
+}

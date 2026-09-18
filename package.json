@@ -1,0 +1,17 @@
+{
+  "name": "my-browser-agent",
+  "version": "2.0.0",
+  "scripts": {
+    "build:background": "esbuild src/background.js --bundle --outfile=dist/background.js --format=iife --target=chrome116",
+    "build:content": "esbuild src/content.js --bundle --outfile=dist/content.js --format=iife --target=chrome116",
+    "build:offscreen": "esbuild src/offscreen.js --bundle --outfile=dist/offscreen.js --format=iife --target=chrome116",
+    "build": "npm run build:background && npm run build:content && npm run build:offscreen",
+    "watch": "npm run build -- --watch"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.17.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

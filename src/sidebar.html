@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: system-ui; padding: 12px; background: #1a1a2e; color: #eee; }
+    #task-input { width: 100%; padding: 8px; margin: 8px 0; border-radius: 6px;
+                  border: 1px solid #444; background: #16213e; color: #eee; }
+    button { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer;
+             background: #0f3460; color: #eee; margin-right: 8px; }
+    button:hover { background: #1a4a7a; }
+    #status { margin: 12px 0; padding: 8px; background: #16213e; border-radius: 6px;
+              font-size: 13px; white-space: pre-wrap; }
+    #plan { margin: 8px 0; font-size: 12px; }
+    .step { padding: 4px 8px; margin: 2px 0; background: #0f3460; border-radius: 4px; }
+    .step.done { background: #1b5e20; }
+    .step.active { background: #e65100; }
+  </style>
+</head>
+<body>
+  <h3>🤖 Browser Agent</h3>
+  <input id="task-input" placeholder="Task likho... jaise 'Flipkart pe iPhone search karo'">
+  <div>
+    <button id="start-btn">Start</button>
+    <button id="stop-btn">Stop</button>
+  </div>
+  <div id="status">Ready</div>
+  <div id="plan"></div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>
