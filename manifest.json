@@ -4,14 +4,15 @@
   "version": "2.0.0",
   "description": "Privacy-preserving browser agent with local AI",
   "permissions": [
-    "tabs",
-    "scripting",
-    "offscreen",
-    "storage",
-    "activeTab",
-    "sidePanel",
-    "webNavigation"
-  ],
+  "tabs",
+  "scripting",
+  "offscreen",
+  "storage",
+  "activeTab",
+  "sidePanel",
+  "webNavigation",
+  "debugger"
+],
   "host_permissions": [
     "<all_urls>",
     "http://localhost:3000/*",
